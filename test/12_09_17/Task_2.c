@@ -3,75 +3,22 @@
 #include<stdbool.h>
 #include<time.h>
 
-float addition(float a, float b)
+int func(int *arr[], int size)
 {
-	printf("%f + %f = %f\n", a, b, a + b);
-	return a + b;
-}
 
-float subtraction(float a, float b)
-{
-	printf("%f - %f = %f\n", a, b, a - b);
-	return a - b;
-}
-
-float multiplication(float a, float b)
-{
-	printf("%f * %f = %f\n", a, b, a * b);
-	return a * b;
-}
-
-float division(float a, float b)
-{
-	if (b == 0)
-	{
-		printf("You can't divide by zero.");
-		return 0;
-	}
-	else 
-	{
-		printf("%f / %f = %f\n", a, b, a / b);
-		return a / b;
-	}
 }
 
 
 int main()
 {
-	float a = 1.0;
-	float b = 1.0;
-	int operation = 0;
-	float(*add)(float, float) = addition;
-	float(*sub)(float, float) = subtraction;
-	float(*mult)(float, float) = multiplication;
-	float(*div)(float, float) = division;
-	float(*mass[4])(float, float) = { add, sub, mult, div };
-	while (true)
+	srand(time(NULL));
+	int array[10];
+	int size = 10;
+	for (int i = 0; i < size; i++)
 	{
-		while (operation < 1 || operation > 4)
-		{
-			printf("Choose operation:\nAddition - 1\nSubtraction - 2\nMultiplication - 3\nDivision - 4\nPress zero to exit\n\nYou enter  ");
-			scanf_s("%d", &operation);
-			if (operation == 0)
-			{
-				break;
-			}
-			else if (operation < 1 || operation > 4)
-			{
-				printf("\nYou entered something wrong. Try again.\n\n");
-			}
-		}
-		if (operation == 0)
-		{
-			break;
-		}
-		printf("\nEnter first number ");
-		scanf_s("%f", &a);
-		printf("Enter second number ");
-		scanf_s("%f", &b);
-		float result = mass[operation-1](a,b);
-		printf("\nresult = %f\n", result);
+		array[i] = rand() % 10 + 1;
 	}
+
 	
 	system("pause");
 	return 0;
