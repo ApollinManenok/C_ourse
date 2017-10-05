@@ -10,7 +10,15 @@ void task3();
 
 //Task 4
 void task4();
-/*
+
 //Task 5
 void task5();
-*/
+
+//Task 6
+void task6();
+
+//Task 7
+void task7();
+
+
+

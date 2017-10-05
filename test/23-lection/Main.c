@@ -6,38 +6,30 @@
 
 int main()
 {
-	int task = 0;
+	int num = 0;
+	void(*t1)() = task1;
+	void(*t2)() = task2;
+	void(*t3)() = task3;
+	void(*t4)() = task4;
+	void(*t5)() = task5;
+	void(*t6)() = task6;
+	void(*tasks[6])() = { t1, t2, t3, t4, t5, t6};
 	while (true)
 	{
-		printf("Enter task number. Press zero if you want to quit. ");
-		scanf_s("%d", &task);
-		if (task==1)
-		{
-			task1();
-		}
-		else if (task == 2)
-		{
-			task2();
-		}
-		else if (task == 3)
-		{
-			task3();
-		}
-		else if (task == 4)
-		{
-			task4();
-		}
-//		else if (task == 5)
-//		{
-//			task5();
-//		}
-		else if(task==0)
+		printf("\nEnter task number. Press zero if you want to quit. ");
+		scanf_s("%d", &num);
+		printf("\n\n");
+		if (num == 0)
 		{
 			break;
 		}
+		else if (num < 1 || num > 6)
+		{
+			printf("\nYou entered something wrong.\n");
+		}
 		else
 		{
-			printf("You entered something wrong.\n");
+			tasks[num - 1]();
 		}
 	}
 	system("pause");

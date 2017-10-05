@@ -137,9 +137,10 @@ void calculator(int* a, int* b, int* z)
 
 void task4()
 {
-	int n = 0;
-	int n1 = 0;
-	int z = 0;
+	int n = 0; //chislo 1
+	int n1 = 0; //chislo 2
+	int z = 0; // operacija
+	//naznachenie ukazatelej
 	int* zn = &z;
 	int* p = &n;
 	int* p1 = &n1;
@@ -159,12 +160,138 @@ void task4()
 	}
 }
 
-/* Task 5
-
-
+// Task 5
 
 void task5()
 {
-
+	srand(time(NULL));
+	int array[100];
+	int size = 10;
+	while (size != 0)
+	{
+		printf("\nEnter array size (0-exit) ");
+		scanf_s("%d", &size);
+		if (size == 0)
+		{
+			break;
+		}
+		else if (size < 0)
+		{
+			printf("\n\nWrong enter!\n\n");
+			continue;
+		}
+		else
+		{
+			printf("\n");
+			for (int i = 0; i < size; i++)
+			{
+				array[i] = rand() % 10 + 1;
+				printf("%d  ", array[i]);
+			}
+			printf("\n");
+			int sum = 0;
+			int *arr = array;
+			for (int i = 0; i < size; i++)
+			{
+				sum += *arr;
+				//printf("%d  ", *arr);
+				arr += 1;
+			}
+			printf("\nSum = %d\n", sum);
+		}
+	}
 }
-*/
+
+
+// Task 6
+
+void task6()
+{
+	srand(time(NULL));
+	int array1[100];
+	int size = 10;
+	int array2[100];
+	while (size != 0)
+	{
+		printf("\nEnter array size (0-exit) ");
+		scanf_s("%d", &size);
+		if (size == 0)
+		{
+			break;
+		}
+		else if (size < 0)
+		{
+			printf("\n\nWrong size!\n\n");
+			continue;
+		}
+		else
+		{
+			printf("\n");
+			for (int i = 0; i < size; i++)
+			{
+				array1[i] = rand() % 10 + 1;
+				printf("%d  ", array1[i]);
+			}
+			printf("\n");
+			int *arr1 = array1;
+			int *arr2 = array2;
+			for (int i = 0; i < size; i++)
+			{
+				*arr2 = *arr1;
+				arr1 += 1;
+				arr2 += 1;
+				printf("%d  ", array2[i]);
+			}
+			printf("\n");
+		}
+	}
+}
+// Task 7
+
+void task7()
+{
+	srand(time(NULL));
+	int array[100];
+	int size = 1;
+	while (size != 0)
+	{
+		printf("\nEnter array size (0-exit) ");
+		scanf_s("%d", &size);
+		if (size == 0)
+		{
+			break;
+		}
+		else if (size < 0)
+		{
+			printf("\n\nWrong size!\n\n");
+			continue;
+		}
+		else
+		{
+			printf("\n");
+			for (int i = 0; i < size; i++)
+			{
+				array[i] = rand() % 10 + 1;
+				printf("%d  ", array[i]);
+			}
+			printf("\n");
+			int *arr1 = array;
+			int *arr2 = array;
+			arr2 += size - 1;
+			for (int i = 0; i < size / 2; i++)
+			{
+				int num = *arr1;
+				*arr1 = *arr2;
+				*arr2 = num;
+				arr1 += 1;
+				arr2 -= 1;
+			}
+			printf("\n");
+			for (int i = 0; i < size; i++)
+			{
+				printf("%d  ", array[i]);
+			}
+			printf("\n");
+		}
+	}
+}

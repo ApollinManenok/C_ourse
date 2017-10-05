@@ -15,20 +15,19 @@ void printing(int matrix[][3])
 
 int main()
 {
-	int matrix[3][3];
+	int matrix[3][3]; //sozdavaemyj massiv
 	int matrix1[3][3] = { 3, 6, 2, 7, 8, 2, 3, 0, 1 };
 	int matrix2[3][3] = { 4, 2, 7, 1, 6, 3, 9, 22, 5 };
 	for (int i = 0; i < 3; i++)
 	{
 		for (int j = 0; j < 3; j++)
 		{
-			matrix[i][j] = matrix1[i][j] * matrix2[i][j];
+			matrix[i][j] = matrix1[i][j] * matrix2[i][j]; //peremnozhenie elementov massiva
 		}
 	}
-	printing(matrix);
 	printing(matrix1);
 	printing(matrix2);
-
+	printing(matrix);
 
 	system("pause");
 	return 0;
